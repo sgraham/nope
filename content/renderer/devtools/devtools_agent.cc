@@ -168,17 +168,6 @@ void DevToolsAgent::setTraceEventCallback(const WebString& category_filter,
   }
 }
 
-void DevToolsAgent::enableTracing(const WebString& category_filter) {
-  TraceLog* trace_log = TraceLog::GetInstance();
-  trace_log->SetEnabled(
-      base::trace_event::CategoryFilter(category_filter.utf8()),
-      TraceLog::RECORDING_MODE, TraceOptions());
-}
-
-void DevToolsAgent::disableTracing() {
-  TraceLog::GetInstance()->SetDisabled();
-}
-
 // static
 void DevToolsAgent::TraceEventCallbackWrapper(
     base::TimeTicks timestamp,
@@ -199,15 +188,6 @@ void DevToolsAgent::TraceEventCallbackWrapper(
     callback(phase, category_group_enabled, name, id, num_args,
              arg_names, arg_types, arg_values, flags, timestamp_seconds);
   }
-}
-
-void DevToolsAgent::enableDeviceEmulation(
-    const blink::WebDeviceEmulationParams& params) {
-  GetRenderViewImpl()->EnableScreenMetricsEmulation(params);
-}
-
-void DevToolsAgent::disableDeviceEmulation() {
-  GetRenderViewImpl()->DisableScreenMetricsEmulation();
 }
 
 // static

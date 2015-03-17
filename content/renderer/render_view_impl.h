@@ -509,9 +509,6 @@ class CONTENT_EXPORT RenderViewImpl
   void Initialize(const ViewMsg_New_Params& params,
                   CompositorDependencies* compositor_deps,
                   bool was_created_by_renderer);
-  void SetScreenMetricsEmulationParameters(float device_scale_factor,
-                                           const gfx::Point& root_layer_offset,
-                                           float root_layer_scale) override;
 
   // Do not delete directly.  This class is reference counted.
   virtual ~RenderViewImpl();

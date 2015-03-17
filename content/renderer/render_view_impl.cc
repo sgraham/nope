@@ -3632,18 +3632,6 @@ void RenderViewImpl::DidCompletePageScaleAnimation() {
   FocusChangeComplete();
 }
 
-void RenderViewImpl::SetScreenMetricsEmulationParameters(
-    float device_scale_factor,
-    const gfx::Point& root_layer_offset,
-    float root_layer_scale) {
-  if (webview() && compositor()) {
-    webview()->setCompositorDeviceScaleFactorOverride(device_scale_factor);
-    webview()->setRootLayerTransform(
-        blink::WebSize(root_layer_offset.x(), root_layer_offset.y()),
-        root_layer_scale);
-  }
-}
-
 bool RenderViewImpl::ScheduleFileChooser(
     const FileChooserParams& params,
     WebFileChooserCompletion* completion) {
