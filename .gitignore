@@ -1,0 +1,5 @@
+*.pyc
+/build/util/LASTCHANGE
+/build/util/LASTCHANGE.blink
+/third_party/WebKit/LayoutTests/
+out/
