@@ -12,7 +12,9 @@ All DEPS are in tree, no need to do the equivalent of gclient sync.
 
 e.g.
 
-    python tools/perf/run_benchmark --browser=exact --browser-executable=out\Release\content_shell.exe startup.warm.blank_page
+    python tools\perf\run_benchmark --browser=exact ^
+        --browser-executable=out\Release\content_shell.exe ^
+        startup.warm.blank_page
 
 TODO:
 - setup + robocopy to standard config laptop for consistent testing
