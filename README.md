@@ -1,4 +1,4 @@
-Building: (all DEPS are in tree, no need to do the equivalent of gclient sync):
+# Building (all DEPS are in tree, no need to do the equivalent of gclient sync):
 
     git clone https://github.com/sgraham/nope.git
     cd nope
@@ -6,7 +6,7 @@ Building: (all DEPS are in tree, no need to do the equivalent of gclient sync):
     ninja -C out\Release content_shell
     out\Release\content_shell
 
-Running benchmark:
+# Running benchmark
 
 e.g.
 
@@ -18,7 +18,7 @@ TODO:
 - wrapper for run\_benchmark that runs + summarizes the set deemed important for
   each commit.
 
-Updating blink:
+# Updating blink
 
 Pull in upstream blink with `git subtree` (at least while it's in its own repo).
 
